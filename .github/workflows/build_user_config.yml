@@ -77,12 +77,12 @@ jobs:
           work_dir: ${{ inputs.work_dir }}
         run: |
           if [ -e zephyr/module.yml ]; then
-            export zmk_load_arg=" -DZMK_EXTRA_MODULES='${GITHUB_WORKSPACE}/${work_dir}'"
+            export zmk_load_arg=" -DZMK_EXTRA_MODULES='${GITHUB_WORKSPACE}/${{env.work_dir}}'"
             new_tmp_dir="${TMPDIR:-/tmp}/zmk-config"
             mkdir -p "${new_tmp_dir}"
             echo "base_dir=${new_tmp_dir}" >> $GITHUB_ENV
           else
-            echo "base_dir=${GITHUB_WORKSPACE}/${work_dir}" >> $GITHUB_ENV
+            echo "base_dir=${GITHUB_WORKSPACE}/${{env.work_dir}}" >> $GITHUB_ENV
           fi
 
           if [ -n "${snippet}" ]; then
@@ -96,9 +96,11 @@ jobs:
           echo "artifact_name=${artifact_name:-${shield:+$shield-}${board}-zmk}" >> $GITHUB_ENV
 
       - name: Copy config files to isolated temporary directory
+        env:
+          work_dir: ${{ inputs.work_dir }}
         working-directory: ${{ inputs.work_dir }}
         run: |
-          if [ "${{ env.base_dir }}" != "${GITHUB_WORKSPACE}" ]; then
+          if [ "${{ env.base_dir }}" != "${GITHUB_WORKSPACE}/${{env.work_dir}}" ]; then
             mkdir "${{ env.base_dir }}/${{ inputs.config_path }}"
             cp -R ${{ inputs.config_path }}/* "${{ env.base_dir }}/${{ inputs.config_path }}/"
           fi
