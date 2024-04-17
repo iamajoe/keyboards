@@ -62,12 +62,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create build directory
-        working_directory: ${{ inputs.work_dir }}
+        working-directory: ${{ inputs.work_dir }}
         run: |
           echo "build_dir=$(mktemp -d)" >> $GITHUB_ENV
 
       - name: Prepare variables
-        working_directory: ${{ inputs.work_dir }}
+        working-directory: ${{ inputs.work_dir }}
         shell: sh -x {0}
         env:
           board: ${{ matrix.board }}
@@ -95,7 +95,7 @@ jobs:
           echo "artifact_name=${artifact_name:-${shield:+$shield-}${board}-zmk}" >> $GITHUB_ENV
 
       - name: Copy config files to isolated temporary directory
-        working_directory: ${{ inputs.work_dir }}
+        working-directory: ${{ inputs.work_dir }}
         run: |
           if [ "${{ env.base_dir }}" != "${GITHUB_WORKSPACE}" ]; then
             mkdir "${{ env.base_dir }}/${{ inputs.config_path }}"
@@ -104,7 +104,7 @@ jobs:
 
       - name: Cache west modules
         uses: actions/cache@v4
-        working_directory: ${{ inputs.work_dir }}
+        working-directory: ${{ inputs.work_dir }}
         continue-on-error: true
         env:
           cache_name: cache-zephyr-${{ env.zephyr_version }}-modules
