@@ -14,4 +14,4 @@ jobs:
        # config_path: "./revxlp/config"
        # fallback_binary: "./revxlp/bin"
        archive_name: "revxlp_firmware"
-       working_directory: "./revxlp"
+       work_dir: "./revxlp"
