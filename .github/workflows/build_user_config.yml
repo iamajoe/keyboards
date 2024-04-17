@@ -104,7 +104,6 @@ jobs:
 
       - name: Cache west modules
         uses: actions/cache@v4
-        working-directory: ${{ inputs.work_dir }}
         continue-on-error: true
         env:
           cache_name: cache-zephyr-${{ env.zephyr_version }}-modules
