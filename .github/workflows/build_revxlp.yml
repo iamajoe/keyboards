@@ -1,5 +1,18 @@
-on: [push, pull_request, workflow_dispatch]
+on: 
+  push:
+    paths:
+      - 'revxlp/**'
+  pull_request:
+    paths:
+      - 'revxlp/**'
+  workflow_dispatch:
 
 jobs:
-  build_revxlp:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+  runs-on: ubuntu-latest
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Call reusable workflow
+      uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+      working-directory: ./revxlp
