@@ -1,10 +1,10 @@
 on: 
   push:
     paths:
-      - 'revxlp/**'
+      # - 'revxlp/**'
   pull_request:
     paths:
-      - 'revxlp/**'
+      # - 'revxlp/**'
 
 jobs:
   build_revxlp:
