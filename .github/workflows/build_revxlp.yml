@@ -8,8 +8,10 @@ on:
 
 jobs:
   build_revxlp:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    uses: build_user_config.yml
     with:
-       build_matrix_path: "./revxlp/build.yaml"
-       config_path: "./revxlp/config"
-       fallback_binary: "./revxlp/bin"
+       # build_matrix_path: "./revxlp/build.yaml"
+       # config_path: "./revxlp/config"
+       # fallback_binary: "./revxlp/bin"
+       archive_name: "revxlp_firmware"
+       working_directory: "./revxlp"
