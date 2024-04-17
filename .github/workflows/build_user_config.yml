@@ -43,7 +43,7 @@ jobs:
         run: python3 -m pip install remarshal
 
       - name: Fetch Build Matrix
-        working_directory: ${{ inputs.work_dir }}
+        working-directory: ${{ inputs.work_dir }}
         run: |
           echo "build_matrix=$(yaml2json '${{ inputs.build_matrix_path }}' | jq -c .)" >> $GITHUB_ENV
           yaml2json "${{ inputs.build_matrix_path }}" | jq
