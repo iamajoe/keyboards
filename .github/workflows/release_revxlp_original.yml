@@ -1,6 +1,7 @@
+name: "Release revxlp (original)"
 on:
   workflow_run:
-    workflows: ["build_revxlp"] 
+    workflows: ["build_revxlp_original"] 
     types:
       - completed
 
@@ -10,4 +11,4 @@ jobs:
     if: github.event.workflow_run.conclusion == 'success'
     uses: iamajoe/keyboards/.github/workflows/release_user_config.yml@main
     with:
-      archive_name: "revxlp_firmware"
+      archive_name: "revxlp_original_firmware"
