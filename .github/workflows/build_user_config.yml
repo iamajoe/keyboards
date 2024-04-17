@@ -32,7 +32,7 @@ on:
 jobs:
   matrix:
     runs-on: ubuntu-latest
-    name: Fetch Build Keyboards
+    name: Fetch build keyboards
     outputs:
       build_matrix: ${{ env.build_matrix }}
     steps:
@@ -42,7 +42,7 @@ jobs:
       - name: Install yaml2json
         run: python3 -m pip install remarshal
 
-      - name: Fetch Build Matrix
+      - name: Fetch build matrix
         working-directory: ${{ inputs.work_dir }}
         run: |
           echo "build_matrix=$(yaml2json '${{ inputs.build_matrix_path }}' | jq -c .)" >> $GITHUB_ENV
