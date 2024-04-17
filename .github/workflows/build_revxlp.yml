@@ -15,3 +15,8 @@ jobs:
        # fallback_binary: "./revxlp/bin"
        archive_name: "revxlp_firmware"
        work_dir: "./revxlp"
+  release_revxlp:
+    needs: build_revxlp
+    uses: iamajoe/keyboards/.github/workflows/release_user_config.yml@main
+    with:
+      archive_name: "revxlp_firmware"

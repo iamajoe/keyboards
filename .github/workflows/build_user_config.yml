@@ -184,9 +184,9 @@ jobs:
   merge:
     runs-on: ubuntu-latest
     needs: build
-    name: Merge Output Artifacts
+    name: Merge output artifacts
     steps:
-      - name: Merge Artifacts
+      - name: Merge artifacts
         uses: actions/upload-artifact/merge@v4
         with:
           name: ${{ inputs.archive_name }}

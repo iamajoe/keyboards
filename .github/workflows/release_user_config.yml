@@ -1,0 +1,45 @@
+
+name: Reusable user config build
+
+on:
+  workflow_call:
+    inputs:
+      archive_name:
+        description: "Archive output file name"
+        default: "firmware"
+        required: false
+        type: string
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    name: Release firmware
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Download merged artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ inputs.archive_name }}
+
+      - name: Create release
+        uses: actions/create-release@v1
+        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ input.archive_name }}_${{ github.sha }}
+          draft: false
+          prerelease: false
+
+      - name: Upload release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./${{ inputs.archive_name }}
+          asset_name: ${{ inputs.archive_name }}
+          asset_content_type: application/zip
