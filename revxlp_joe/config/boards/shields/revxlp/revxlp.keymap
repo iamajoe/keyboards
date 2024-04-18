@@ -25,6 +25,7 @@
     };
 
     behaviors {
+        // REF: https://github.com/folke/zmk-config/blob/main/config/includes/mods.dtsi
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_LEFT";
@@ -32,23 +33,15 @@
             bindings = <&kp>, <&kp>;
 
             flavor = "tap-unless-interrupted";
-            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-            quick-tap-ms = <200>;
-            // hold-trigger-key-positions = <6 7 8 9 10 11>;    // <---[[right-hand keys]]
-            hold-trigger-key-positions = <KEYS_R KEYS_T>;
-
-            // REF: https://github.com/folke/zmk-config/blob/main/config/includes/mods.dtsi
-            // compatible = "zmk,behavior-hold-tap";
-            // #binding-cells = <2>;
-            // bindings = <&kp>, <&kp>;
-            //
             // flavor = "balanced";
+            tapping-term-ms = <100>;
             // tapping-term-ms = <280>;
+            quick-tap-ms = <200>;
             // quick-tap-ms = <175>;        // repeat on tap-into-hold
-            // // global-quick-tap-ms = <150>;         // requires PR #1387
-            // global-quick-tap;
-            // hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
             // hold-trigger-on-release;       // requires PR #1423
+            // global-quick-tap-ms = <150>;         // requires PR #1387
+            // global-quick-tap;
         };
 
         hmr: homerow_mods_right {
@@ -58,23 +51,15 @@
             bindings = <&kp>, <&kp>;
 
             flavor = "tap-unless-interrupted";
-            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-            quick-tap-ms = <200>;
-            // hold-trigger-key-positions = <6 7 8 9 10 11>;    // <---[[right-hand keys]]
-            hold-trigger-key-positions = <KEYS_L KEYS_T>;
-
-            // REF: https://github.com/folke/zmk-config/blob/main/config/includes/mods.dtsi
-            // compatible = "zmk,behavior-hold-tap";
-            // #binding-cells = <2>;
-            // bindings = <&kp>, <&kp>;
-            //
             // flavor = "balanced";
+            tapping-term-ms = <100>;
             // tapping-term-ms = <280>;
+            quick-tap-ms = <200>;
             // quick-tap-ms = <175>;        // repeat on tap-into-hold
-            // // global-quick-tap-ms = <150>;         // requires PR #1387
-            // global-quick-tap;
-            // hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            hold-trigger-key-positions = <KEYS_L KEYS_T>;
             // hold-trigger-on-release;       // requires PR #1423
+            // global-quick-tap-ms = <150>;         // requires PR #1387
+            // global-quick-tap;
         };
     };
 
