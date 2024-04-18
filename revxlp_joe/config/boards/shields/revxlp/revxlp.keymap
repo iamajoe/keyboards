@@ -26,16 +26,16 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
-            flavor = "tap-unless-interrupted";
-            // flavor = "balanced";
-            tapping-term-ms = <100>;
-            // tapping-term-ms = <280>;
-            quick-tap-ms = <200>;
-            // quick-tap-ms = <175>;        // repeat on tap-into-hold
+            // flavor = "tap-unless-interrupted";
+            flavor = "balanced";
+            // tapping-term-ms = <100>;
+            tapping-term-ms = <280>;
+            // quick-tap-ms = <200>;
+            quick-tap-ms = <175>;        // repeat on tap-into-hold
             hold-trigger-key-positions = <6 7 8 9 10 11>;
-            // hold-trigger-on-release;       // requires PR #1423
-            // global-quick-tap-ms = <150>;         // requires PR #1387
-            // global-quick-tap;
+            hold-trigger-on-release;       // requires PR #1423
+            global-quick-tap-ms = <150>;         // requires PR #1387
+            global-quick-tap;
         };
 
         hmr: homerow_mods_right {
@@ -44,16 +44,16 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
-            flavor = "tap-unless-interrupted";
-            // flavor = "balanced";
-            tapping-term-ms = <100>;
-            // tapping-term-ms = <280>;
-            quick-tap-ms = <200>;
-            // quick-tap-ms = <175>;        // repeat on tap-into-hold
+            // flavor = "tap-unless-interrupted";
+            flavor = "balanced";
+            // tapping-term-ms = <100>;
+            tapping-term-ms = <280>;
+            // quick-tap-ms = <200>;
+            quick-tap-ms = <175>;        // repeat on tap-into-hold
             hold-trigger-key-positions = <0 1 2 3 4 5>;
-            // hold-trigger-on-release;       // requires PR #1423
-            // global-quick-tap-ms = <150>;         // requires PR #1387
-            // global-quick-tap;
+            hold-trigger-on-release;       // requires PR #1423
+            global-quick-tap-ms = <150>;         // requires PR #1387
+            global-quick-tap;
         };
     };
 
