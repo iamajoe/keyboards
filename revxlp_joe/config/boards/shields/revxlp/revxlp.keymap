@@ -60,7 +60,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "BOOTLOADER_LONG_PRESS";
             #binding-cells = <2>;
-            bindings = <&none>, <&bootloader>;
+            bindings = <&bootloader>, <&none>;
             tapping-term-ms = <3000>;
         };
     };
