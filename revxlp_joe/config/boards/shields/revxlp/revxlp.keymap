@@ -75,7 +75,12 @@
 
     combos {
         compatible = "zmk,combos";
-        // ...
+        bootloader_combo {
+            timeout-ms = <50>;
+            key-positions = <5 6>;
+            bindings = <&bootloader>;
+            layers = <MED_L>;
+        };
     };
 
     keymap {
