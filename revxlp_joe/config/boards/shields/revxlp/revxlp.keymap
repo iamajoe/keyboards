@@ -90,9 +90,9 @@
             label = "Qwerty";
             bindings = <
 &none      &kp Q            &kp W               &kp E               &kp R             &kp T         &kp Y            &kp U          &kp I          &kp O          &kp P          &none
-&none      &hml LSFT A      &hml LGUI S         &hml LALT D         &hml LCTL F       &kp G         &kp H            &hmr RCTL J    &hmr RALT K    &hmr LGUI L    &hmr LSFT SEMI &none
+&none      &hml LSFT A      &hml LGUI S         &hml LALT D         &hml LCTL F       &kp G         &kp H            &hmr RCTL J    &hmr RALT K    &hmr RGUI L    &hmr RSFT SEMI &none
 &none      &kp Z            &kp X               &kp C               &kp V             &kp B         &kp N            &kp M          &kp COMMA      &kp DOT        &kp SLASH      &none
-                                                &kp ESC             &lt NUM_L DEL     &kp SPACE     &kp BSPC         &lt SYM_L RET  &kp TAB
+                                                &hml LSFT ESC       &lt NUM_L DEL     &kp SPACE     &kp BSPC         &lt SYM_L RET  &hml RCTL TAB
             >;
         };
 
