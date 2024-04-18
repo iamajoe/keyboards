@@ -13,8 +13,8 @@
 #define NUM_L 2
 #define MED_L 3
 
-#define KEYS_L 0 1 2 3 4 5
-#define KEYS_R 6 7 8 9 10 11
+#define KEYS_L 0, 1, 2, 3, 4, 5
+#define KEYS_R 6, 7, 8, 9, 10, 11
 
 / {
     tap_dances {
