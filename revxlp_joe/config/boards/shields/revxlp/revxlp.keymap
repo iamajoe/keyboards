@@ -13,9 +13,6 @@
 #define NUM_L 2
 #define MED_L 3
 
-#define KEYS_L 0, 1, 2, 3, 4, 5
-#define KEYS_R 6, 7, 8, 9, 10, 11
-
 / {
     tap_dances {
       // ...
@@ -35,7 +32,7 @@
             // tapping-term-ms = <280>;
             quick-tap-ms = <200>;
             // quick-tap-ms = <175>;        // repeat on tap-into-hold
-            hold-trigger-key-positions = <KEYS_R>;
+            hold-trigger-key-positions = <6 7 8 9 10 11>;
             // hold-trigger-on-release;       // requires PR #1423
             // global-quick-tap-ms = <150>;         // requires PR #1387
             // global-quick-tap;
@@ -53,7 +50,7 @@
             // tapping-term-ms = <280>;
             quick-tap-ms = <200>;
             // quick-tap-ms = <175>;        // repeat on tap-into-hold
-            hold-trigger-key-positions = <KEYS_L>;
+            hold-trigger-key-positions = <0 1 2 3 4 5>;
             // hold-trigger-on-release;       // requires PR #1423
             // global-quick-tap-ms = <150>;         // requires PR #1387
             // global-quick-tap;
