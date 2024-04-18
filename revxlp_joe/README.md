@@ -10,4 +10,6 @@ Click reset button twice. Hard drive should appear and ready to push the uf2 the
 
 ## Keymap
 
-Paste the keymap into https://keymap-drawer.streamlit.app/
+Paste the keymap file into https://keymap-drawer.streamlit.app/
+
+![Keymap](revxlp_joe_keymap.png)
