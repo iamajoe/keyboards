@@ -12,7 +12,6 @@
 #define SYM_L 1
 #define NUM_L 2
 #define MED_L 3
-#define FUN_L 4
 
 #define KEYS_L 0 1 2 3 4 5
 #define KEYS_R 6 7 8 9 10 11
@@ -96,15 +95,17 @@
         compatible = "zmk,keymap";
 
         qwerty_layer {
+            label = "Qwerty";
             bindings = <
 &none      &kp Q            &kp W               &kp E               &kp R             &kp T         &kp Y            &kp U          &kp I          &kp O          &kp P          &none
 &none      &hml LSFT A      &hml LGUI S         &hml LALT D         &hml LCTL F       &kp G         &kp H            &hmr RCTL J    &hmr RALT K    &hmr LGUI L    &hmr LSFT SEMI &none
 &none      &kp Z            &kp X               &kp C               &kp V             &kp B         &kp N            &kp M          &kp COMMA      &kp DOT        &kp SLASH      &none
-                                                &mt LCTL ESC        &lt NUM_L DEL     &kp SPACE     &kp BKSPC        &lt SYM_L RET  &mt LGUI TAB
+                                                &kp ESC             &lt NUM_L DEL     &kp SPACE     &kp BKSPC        &lt SYM_L RET  &kp TAB
             >;
         };
 
         sym_layer {
+            label = "Symbol";
             bindings = <
 &trans     &kp LBRC         &kp LBKT            &kp LPAR            &kp EQUAL         &kp ASTERISK  &kp AMPERSAND    &kp SLASH      &kp RPAR       &kp RBKT       &kp RBRC       &trans
 &trans     &hml LSFT SQT    &hml LGUI CARET     &hml LALT PERCENT   &hml LCTL DOLLAR  &kp PLUS      &kp MINUS        &hmr RCTL LARW &hmr RALT DARW &hmr LGUI UARW &hmr LSFT RARW &trans
@@ -114,6 +115,7 @@
         };
 
         num_layer {
+            label = "Number";
             bindings = <
 &trans     &trans           &trans              &trans              &trans            &trans        &kp LESS_THAN    &kp N7         &kp N8         &kp N9         &trans         &trans
 &trans     &trans           &trans              &trans              &trans            &trans        &kp GREATER_THAN &hmr RCTL N4   &hmr RALT N5   &hmr LGUI N6   &trans         &trans
@@ -123,6 +125,7 @@
         };
 
         media_layer {
+            label = "Media";
             bindings = <
 &trans     &trans           &trans              &trans              &trans            &trans        &trans           &kp F7         &kp F8         &kp F9         &kp F10        &trans
 &trans     &hml LSFT C_PREV &hml LGUI C_VOL_DN  &hml LALT C_VOL_UP  &hml LCTL C_NEXT  &trans        &trans           &hmr RCTL F4   &hmr RALT F5   &hmr LGUI F6   &hmr LSFT F11  &trans
