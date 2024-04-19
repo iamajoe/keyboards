@@ -67,7 +67,7 @@ jobs:
         run: |
           mkdir -p config/boards/shields
           cp -rf shields/${{ inputs.shield }} config/boards/shields/${{ inputs.shield }}
-          cp -rf boards config/boards/shields/boards
+          cp -rf boards config/boards/shields/${{ inputs.shield }}/boards
           cp -rf west.yml config/west.yml
 
       ##############################################
