@@ -14,7 +14,7 @@ on:
 jobs:
   build:
     # TODO: to be changed to main when merging
-    uses: iamajoe/keyboards/.github/workflows/build_user_config.yml@diff_structure
+    uses: iamajoe/keyboards/.github/workflows/build_user_config.yml@main
     with:
        shield: "revxlp_joe"
   # TODO: fix release, not being able to download the firmware artifact

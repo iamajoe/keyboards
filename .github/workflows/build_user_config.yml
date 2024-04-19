@@ -71,7 +71,8 @@ jobs:
           cp -rf west.yml config/west.yml
 
       ##############################################
-      # NOTE: Copied form https://github.com/zmkfirmware/zmk/blob/main/.github/workflows/build-user-config.yml
+      # NOTE: Copied from:
+      # https://github.com/zmkfirmware/zmk/blob/main/.github/workflows/build-user-config.yml
       #
       - name: Prepare variables
         shell: sh -x {0}
