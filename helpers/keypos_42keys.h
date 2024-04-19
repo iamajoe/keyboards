@@ -1,4 +1,4 @@
-// BASED ON: https://github.com/urob/zmk-nodefree-config/blob/main/keypos_def/keypos_42keys.h
+// REF: https://github.com/urob/zmk-nodefree-config/blob/main/keypos_def/keypos_42keys.h
 
 /*                                      42 KEY MATRIX / LAYOUT MAPPING
 
@@ -11,7 +11,7 @@
 
 #pragma once
 
-#define LEFT_HAND    5 4 3 2 1 0 17 16 15 14 13 12 29 28 27 26 25 24
+#define LEFT_HAND    0 1 2 3 4 12 13 14 15 16 17 24 25 26 27 28 29
 #define RIGHT_HAND   6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35
 #define THUMBS       36 37 38 39 40 41
 
