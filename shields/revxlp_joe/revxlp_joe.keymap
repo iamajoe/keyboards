@@ -12,7 +12,6 @@
 // these will be copied on the build process
 #include "./helpers/keypos_42keys.h"
 #include "./helpers/zmk_nodefree.h"
-#include "./helpers/tapdance.h"
 
 #define SYM_L 1
 #define NUM_L 2
@@ -29,13 +28,34 @@
 ZMK_COMBO(bootloader_combo, &bootloader, LT5 RT0, MED_L)
 
 // TAPDANCES
-ZMK_TAP_DANCE(q_esc, Q, ESC)
-ZMK_TAP_DANCE(e_find, E, K_FIND)
-ZMK_TAP_DANCE(y_redo, Y, K_REDO)
-ZMK_TAP_DANCE(z_undo, Z, K_UNDO)
-ZMK_TAP_DANCE(x_cut, X, K_CUT)
-ZMK_TAP_DANCE(c_copy, C, K_COPY)
-ZMK_TAP_DANCE(v_paste, V, K_PASTE)
+ZMK_BEHAVIOR(q_esc, tap_dance,
+  tapping-terms-ms = <200>;
+  bindings = <&kp Q>, <&kp ESC>;
+)
+ZMK_BEHAVIOR(e_find, tap_dance,
+  tapping-terms-ms = <200>;
+  bindings = <&kp E>, <&kp K_FIND>;
+)
+ZMK_BEHAVIOR(y_redo, tap_dance,
+  tapping-terms-ms = <200>;
+  bindings = <&kp Y>, <&kp K_REDO>;
+)
+ZMK_BEHAVIOR(z_undo, tap_dance,
+  tapping-terms-ms = <200>;
+  bindings = <&kp Z>, <&kp K_UNDO>;
+)
+ZMK_BEHAVIOR(x_cut, tap_dance,
+  tapping-terms-ms = <200>;
+  bindings = <&kp X>, <&kp K_CUT>;
+)
+ZMK_BEHAVIOR(c_copy, tap_dance,
+  tapping-terms-ms = <200>;
+  bindings = <&kp C>, <&kp K_COPY>;
+)
+ZMK_BEHAVIOR(v_paste, tap_dance,
+  tapping-terms-ms = <200>;
+  bindings = <&kp V>, <&kp K_PASTE>;
+)
 
 // CONDITIONAL
 ZMK_CONDITIONAL_LAYER(NUM_L SYM_L, MED_L)
