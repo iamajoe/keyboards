@@ -12,17 +12,21 @@
 #define SYM_L 1
 #define NUM_L 2
 #define MED_L 3
+
+// TODO: setup the hyper
 // #define HYPER(keycode) LG(LS(LC(LA(keycode))))
+
+#define CREATE_TAP_DANCE(tap, doubletap) \
+    arg1##_##arg2: arg1##_##arg2 { \
+        compatible = "zmk,behavior-tap-dance"; \
+        #binding-cells = <0>; \
+        tapping-term-ms = <200>; \
+        bindings = <&kp arg1>, <&kp arg2>; \
+    }
 
 / {
     tap_dances {
-        dtd: double_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "DOUBLE_TAP_DANCE";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            bindings = <&kp>, <&kp>;
-        };
+      CREATE_TAP_DANCE(Q, ESC)
     };
 
     behaviors {
@@ -30,7 +34,6 @@
         // REF: https://github.com/urob/zmk-config
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_LEFT";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
@@ -44,7 +47,6 @@
 
         hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_RIGHT";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
@@ -58,7 +60,6 @@
 
         blp: bootloader_long_press {
             compatible = "zmk,behavior-hold-tap";
-            label = "BOOTLOADER_LONG_PRESS";
             #binding-cells = <2>;
             bindings = <&bootloader>, <&none>;
             tapping-term-ms = <3000>;
@@ -90,9 +91,9 @@
         qwerty_layer {
             label = "Qwerty";
             bindings = <
-&none  &dtd Q ESC      &kp W               &dtd E K_FIND       &kp R              &kp T            &dtd Y K_REDO   &kp U             &kp I           &kp O             &kp P            &none
+&none  &Q_ESC          &kp W               &dtd E K_FIND       &kp R              &kp T            &dtd Y K_REDO   &kp U             &kp I           &kp O             &kp P            &none
 &none  &hml LGUI A     &hml LALT S         &hml LCTL D         &hml LSFT F        &kp G            &kp H           &hmr LSFT J       &hmr LCTL K     &hmr LALT         &hmr LGUI SEMI   &none
-// &none  &hml LGUI A     &hml LALT S         &hml LCTL D         &hml LSFT F        &hml HYPER G     &hmr HYPER H    &hmr LSFT J       &hmr LCTL K     &hmr LALT         &hmr LGUI SEMI   &none
+// &none  &hml LGUI A     &hml LALT S         &hml LCTL D         &hml LSFT F        &hml HYPER G     &hmr HYPER H    &hmr LSFT J       &hmr LCTL K     &hmr LALT         &hmr LGUI SEMI  &none
 &none  &dtd Z K_UNDO   &dtd X K_CUT        &dtd C K_COPY       &dtd V K_PASTE     &kp B            &kp N           &kp M             &kp COMMA       &kp DOT           &kp SLASH        &none
                                            &lt SYM_L ESC       &lt NUM_L TAB      &lt SYM_L SPACE  &lt NUM_L BSPC  &lt SYM_L RET     &lt NUM_L DEL
             >;
