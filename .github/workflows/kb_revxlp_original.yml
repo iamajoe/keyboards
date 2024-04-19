@@ -10,13 +10,11 @@ on:
       - 'boards/shields/revxlp/**'
 
 jobs:
-  build_revxlp_original:
+  build:
+    uses: iamajoe/keyboards/.github/workflows/build_user_config.yml@main
     uses: iamajoe/keyboards/.github/workflows/build_user_config.yml@main
     with:
-       build_matrix_path: "boards/shields/revxlp/build.yaml"
-       config_path: "."
-       archive_name: "revxlp_original_firmware"
-       # work_dir: "./revxlp_original"
+       shield: "revxlp"
   # TODO: fix release, not being able to download the firmware artifact
   # release_revxlp_original:
   #   if: github.event.pull_request.merged == true && github.base_ref == 'main'

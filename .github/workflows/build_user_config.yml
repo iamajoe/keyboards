@@ -1,13 +1,14 @@
+# REF: https://github.com/zmkfirmware/zmk/blob/main/.github/workflows/build-user-config.yml
 name: Reusable user config build
 
 on:
   workflow_call:
     inputs:
-      build_matrix_path:
-        description: "Path to the build matrix file"
-        default: "build.yaml"
-        required: false
+      shield:
+        description: "Shield to build"
+        required: true
         type: string
+
       config_path:
         description: "Path to the config directory"
         default: "config"
@@ -18,35 +19,42 @@ on:
         default: "bin"
         required: false
         type: string
-      archive_name:
-        description: "Archive output file name"
-        default: "firmware"
-        required: false
-        type: string
-      work_dir:
-        description: "Working directory for the source"
-        default: "."
-        required: false
-        type: string
 
 jobs:
   matrix:
     runs-on: ubuntu-latest
-    name: Fetch build keyboards
+    name: Fetch shield data
     outputs:
       build_matrix: ${{ env.build_matrix }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Check required files
+        run: |
+          if [ ! -f shields/${{ inputs.shield }} ]
+            echo "Shield folder does not exist"
+            exit 1
+          then
+          fi
+          if [ ! -f boards }} ]
+            echo "Boards folder does not exist"
+            exit 1
+          then
+          fi
+          if [ ! -f west.yml }} ]
+            echo "west.yml file does not exist"
+            exit 1
+          then
+          fi
+
       - name: Install yaml2json
         run: python3 -m pip install remarshal
 
       - name: Fetch build matrix
-        working-directory: ${{ inputs.work_dir }}
         run: |
-          echo "build_matrix=$(yaml2json '${{ inputs.build_matrix_path }}' | jq -c .)" >> $GITHUB_ENV
-          yaml2json "${{ inputs.build_matrix_path }}" | jq
+          echo "build_matrix=$(yaml2json 'shields/${{ inputs.shield }}/build.yaml' | jq -c .)" >> $GITHUB_ENV
+          yaml2json "shields/${{ inputs.shield }}/build.yaml" | jq
 
   build:
     runs-on: ubuntu-latest
@@ -61,28 +69,29 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Create build directory
-        working-directory: ${{ inputs.work_dir }}
+      - name: Setup the folders and files as expected
         run: |
-          echo "build_dir=$(mktemp -d)" >> $GITHUB_ENV
+          mkdir -p config/boards/shields
+          cp -rf shields/${{ inputs.shield }} config/boards/shields/${{ inputs.shield }}
+          cp -rf boards config/boards/shields/boards
+          cp -rf west.yml config/west.yml
 
+      # NOTE: Copied form https://github.com/zmkfirmware/zmk/blob/main/.github/workflows/build-user-config.yml
       - name: Prepare variables
-        working-directory: ${{ inputs.work_dir }}
         shell: sh -x {0}
         env:
           board: ${{ matrix.board }}
           shield: ${{ matrix.shield }}
           artifact_name: ${{ matrix.artifact-name }}
           snippet: ${{ matrix.snippet }}
-          work_dir: ${{ inputs.work_dir }}
         run: |
           if [ -e zephyr/module.yml ]; then
-            export zmk_load_arg=" -DZMK_EXTRA_MODULES='${GITHUB_WORKSPACE}/${{env.work_dir}}'"
+            export zmk_load_arg=" -DZMK_EXTRA_MODULES='${GITHUB_WORKSPACE}'"
             new_tmp_dir="${TMPDIR:-/tmp}/zmk-config"
             mkdir -p "${new_tmp_dir}"
             echo "base_dir=${new_tmp_dir}" >> $GITHUB_ENV
           else
-            echo "base_dir=${GITHUB_WORKSPACE}/${{env.work_dir}}" >> $GITHUB_ENV
+            echo "base_dir=${GITHUB_WORKSPACE}" >> $GITHUB_ENV
           fi
 
           if [ -n "${snippet}" ]; then
@@ -96,11 +105,8 @@ jobs:
           echo "artifact_name=${artifact_name:-${shield:+$shield-}${board}-zmk}" >> $GITHUB_ENV
 
       - name: Copy config files to isolated temporary directory
-        env:
-          work_dir: ${{ inputs.work_dir }}
-        working-directory: ${{ inputs.work_dir }}
         run: |
-          if [ "${{ env.base_dir }}" != "${GITHUB_WORKSPACE}/${{env.work_dir}}" ]; then
+          if [ "${{ env.base_dir }}" != "${GITHUB_WORKSPACE}" ]; then
             mkdir "${{ env.base_dir }}/${{ inputs.config_path }}"
             cp -R ${{ inputs.config_path }}/* "${{ env.base_dir }}/${{ inputs.config_path }}/"
           fi
@@ -189,6 +195,6 @@ jobs:
       - name: Merge artifacts
         uses: actions/upload-artifact/merge@v4
         with:
-          name: ${{ inputs.archive_name }}
+          name: ${{ inputs.shield }}
           pattern: artifact-*
           delete-merged: true
