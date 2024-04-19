@@ -161,7 +161,8 @@
 &none  &hml LGUI A     &hml LALT S      &hml LCTRL D       &hml LSHFT F        &kp G            &kp H           &hmr LSHFT J      &hmr LCTRL K    &hmr LALT         &hmr LGUI SEMI   &none
 // &none  &z_undo         &x_cut           &c_copy            &v_paste            &kp B            &kp N           &kp M             &kp COMMA       &kp DOT           &kp SLASH        &none
 &none  &kp Z         &kp X           &kp C            &kp V            &kp B            &kp N           &kp M             &kp COMMA       &kp DOT           &kp SLASH        &none
-                                        &lt SYM_L ESC      &lt NUM_L TAB       &lt SYM_L SPACE  &lt NUM_L BSPC  &lt SYM_L RET     &lt NUM_L DEL
+                                        &kp ESC      &kp TAB       &kp SPACE  &kp BSPC  &kp RET     &kp DEL
+                                        // &lt SYM_L ESC      &lt NUM_L TAB       &lt SYM_L SPACE  &lt NUM_L BSPC  &lt SYM_L RET     &lt NUM_L DEL
 
       >;
     };
