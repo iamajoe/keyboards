@@ -31,15 +31,13 @@ jobs:
 
       - name: Check required files
         run: |
-          if [ ! -f shields/${{ inputs.shield }} ]
+          if [ ! -f shields/${{ inputs.shield }} ]; then
             echo "Shield folder does not exist"
             exit 1
-          then
-          elif [ ! -f boards ]
+          elif [ ! -f boards ]; then
             echo "Boards folder does not exist"
             exit 1
-          then
-          elif [ ! -f west.yml ]
+          elif [ ! -f west.yml ]; then
             echo "west.yml file does not exist"
             exit 1
           fi
