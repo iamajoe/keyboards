@@ -69,6 +69,12 @@ jobs:
           cp -rf shields/${{ inputs.shield }} config/boards/shields/${{ inputs.shield }}
           cp -rf boards config/boards/shields/${{ inputs.shield }}/boards
           cp -rf west.yml config/west.yml
+          echo "Config folder:"
+          ls config
+          echo "Shield folder:"
+          ls config/boards/shields/${{ inputs.shield }}
+          echo "Boards available:"
+          ls config/boards/shields/${{ inputs.shield }}/boards
 
       ##############################################
       # NOTE: Copied from:
