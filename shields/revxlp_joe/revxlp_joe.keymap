@@ -128,55 +128,43 @@
       compatible = "zmk,behavior-hold-tap";
       label = "HOMEROW_MODS_LEFT";
       #binding-cells = <2>;
-      bindings = <&kp>, <&kp>;
-
-      // flavor = "tap-unless-interrupted";
-      flavor = "balanced";
-      // tapping-term-ms = <100>;
-      tapping-term-ms = <280>;
-      // quick-tap-ms = <200>;
-      quick-tap-ms = <175>;        // repeat on tap-into-hold
-      hold-trigger-key-positions = <6 7 8 9 10 11>;
-      hold-trigger-on-release;       // requires PR #1423
-      // global-quick-tap-ms = <150>;         // requires PR #1387
-      // global-quick-tap;
+      flavor = "balanced"; 
+      tapping-term-ms = <280>; 
+      quick-tap-ms = <175>; 
+      require-prior-idle-ms = <150>; 
+      hold-trigger-on-release;
+      bindings = <&kp>, <&kp>; 
     };
 
     hmr: homerow_mods_right {
       compatible = "zmk,behavior-hold-tap";
       label = "HOMEROW_MODS_RIGHT";
       #binding-cells = <2>;
-      bindings = <&kp>, <&kp>;
-
-      // flavor = "tap-unless-interrupted";
-      flavor = "balanced";
-      // tapping-term-ms = <100>;
-      tapping-term-ms = <280>;
-      // quick-tap-ms = <200>;
-      quick-tap-ms = <175>;        // repeat on tap-into-hold
-      hold-trigger-key-positions = <0 1 2 3 4 5>;
-      hold-trigger-on-release;       // requires PR #1423
-      // global-quick-tap-ms = <150>;         // requires PR #1387
-      // global-quick-tap;
+      flavor = "balanced"; 
+      tapping-term-ms = <280>; 
+      quick-tap-ms = <175>; 
+      require-prior-idle-ms = <150>; 
+      hold-trigger-on-release;
+      bindings = <&kp>, <&kp>; 
     };
 
     blp: bootloader_long_press {
       compatible = "zmk,behavior-hold-tap";
       label = "BOOTLOADER_LONG_PRESS";
       #binding-cells = <2>;
-      bindings = <&bootloader>, <&none>;
       tapping-term-ms = <3000>;
+      bindings = <&bootloader>, <&none>;
     };
   };
 };
 
 // LAYERS
 / {
-    keymap {
-        compatible = "zmk,keymap";
-        default_layer {
-           label = "default";
-           bindings = <
+  keymap {
+    compatible = "zmk,keymap";
+    default_layer {
+      label = "default";
+      bindings = <
 
 // &none  &q_esc          &kp W            &e_find            &kp R               &kp T            &y_redo         &kp U             &kp I           &kp O             &kp P            &none
 &none  &kp Q          &kp W            &kp E            &kp R               &kp T            &kp Y         &kp U             &kp I           &kp O             &kp P            &none
@@ -185,59 +173,58 @@
 &none  &kp Z         &kp X           &kp C            &kp V            &kp B            &kp N           &kp M             &kp COMMA       &kp DOT           &kp SLASH        &none
                                         &lt SYM_L ESC      &lt NUM_L TAB       &lt SYM_L SPACE  &lt NUM_L BSPC  &lt SYM_L RET     &lt NUM_L DEL
 
-           >;
-       };
-   };
+      >;
+    };
+  };
 };
 
 / {
-    keymap {
-        compatible = "zmk,keymap";
-        sym_layer {
-           label = "symbol";
-           bindings = <
+  keymap {
+    compatible = "zmk,keymap";
+    sym_layer {
+      label = "symbol";
+      bindings = <
 
 &trans &kp QUESTION    &kp LESS_THAN    &kp AT             &kp GREATER_THAN    &kp GRAVE       &kp AMPERSAND    &kp LEFT_BRACKET  &kp PIPE        &kp RIGHT_BRACKET &kp HASH         &trans
 &trans &hml LGUI SQT   &hml LALT CARET  &hml LCTRL PERCENT &hml LSHFT DOLLAR   &kp PLUS        &kp MINUS        &hmr LSHFT LPAR   &hmr LCTRL COLON &hmr LALT RPAR   &hmr LGUI DOLLAR &trans
 &trans &kp EXCLAMATION &kp SLASH        &kp ASTERISK       &kp BACKSLASH       &kp TILDE       &kp EQUAL        &kp LBRC          &kp SEMICOLON   &kp RBRC          &trans           &trans
                                         &trans             &trans              &trans          &trans           &trans            &trans
 
-           >;
-       };
-   };
+      >;
+    };
+  };
 };
 
 / {
-    keymap {
-        compatible = "zmk,keymap";
-        num_layer {
-           label = "number";
-           bindings = <
+  keymap {
+    compatible = "zmk,keymap";
+    num_layer {
+      label = "number";
+      bindings = <
 
 &trans &kp PLUS        &kp N7           &kp N8             &kp N9              &trans          &trans           &trans            &kp COMMA        &kp DOT          &kp ASTERISK     &trans
 &trans &hmr LGUI MINUS &hmr LALT N4     &hmr LCTRL N5      &hmr LSHFT N6       &trans          &kp LARW         &hmr LSHFT DARW   &hmr LCTRL UARW  &hmr LALT RARW   &kp SLASH        &trans
 &trans &kp EQUAL       &kp N1           &kp N2             &kp N3              &kp N0          &kp HOME         &kp PG_DN         &kp PG_UP        &kp END          &kp EQUAL        &trans
                                         &trans             &trans              &trans          &lt SYM_L DEL    &trans            &trans
 
-           >;
-       };
-   };
+      >;
+    };
+  };
 };
 
 / {
-    keymap {
-        compatible = "zmk,keymap";
-        media_layer {
-           label = "media";
-           bindings = <
+  keymap {
+    compatible = "zmk,keymap";
+    media_layer {
+      label = "media";
+      bindings = <
 
 &trans &blp 0 0       &kp F7            &kp F8              &kp F9             &kp F10         &trans           &trans            &trans           &trans           &trans           &trans
 &trans &trans         &hml LALT F4      &hml LCTRL F5       &hml LSHFT F6      &kp F11         &kp C_PREV       &hmr LSHFT C_VOL_DN &hmr LCTRL C_VOL_UP &hmr LALT C_NEXT &trans      &trans
 &trans &trans         &kp F1            &kp F2              &kp F3             &kp F12         &kp PSCRN        &kp C_PLAY_PAUSE  &kp C_MUTE       &trans           &trans           &trans
                                         &trans              &trans             &trans          &trans           &trans            &trans
 
-           >;
-       };
-   };
+      >;
+    };
+  };
 };
-)
