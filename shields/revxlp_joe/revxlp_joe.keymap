@@ -76,10 +76,10 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
 
 // LAYERS
 ZMK_LAYER(default_layer,
-&none  &td_q_esc       &kp W            &td_e_find          &kp R              &kp T            &td_y_redo      &kp U             &kp I           &kp O             &kp P            &none
-&none  &hml LGUI A     &hml LALT S      &hml LCTRL D        &hml LSHFT F       &kp G            &kp H           &hmr LSHFT J      &hmr LCTRL K    &hmr LALT         &hmr LGUI SEMI   &none
-&none  &td_z_undo      &td_x_cut        &td_c_copy          &td_v_paste        &kp B            &kp N           &kp M             &kp COMMA       &kp DOT           &kp SLASH        &none
-                                        &lt SYM_L ESC       &lt NUM_L TAB      &lt SYM_L SPACE  &lt NUM_L BSPC  &lt SYM_L RET     &lt NUM_L DEL
+&none  &q_esc          &kp W            &e_find            &kp R               &kp T            &y_redo         &kp U             &kp I           &kp O             &kp P            &none
+&none  &hml LGUI A     &hml LALT S      &hml LCTRL D       &hml LSHFT F        &kp G            &kp H           &hmr LSHFT J      &hmr LCTRL K    &hmr LALT         &hmr LGUI SEMI   &none
+&none  &z_undo         &x_cut           &c_copy            &v_paste            &kp B            &kp N           &kp M             &kp COMMA       &kp DOT           &kp SLASH        &none
+                                        &lt SYM_L ESC      &lt NUM_L TAB       &lt SYM_L SPACE  &lt NUM_L BSPC  &lt SYM_L RET     &lt NUM_L DEL
 )
 
 ZMK_LAYER(sym_layer,
