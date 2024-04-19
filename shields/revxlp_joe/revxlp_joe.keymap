@@ -43,33 +43,36 @@ ZMK_CONDITIONAL_LAYER(NUM_L SYM_L, MED_L)
 // BEHAVIORS
 // REF: https://github.com/folke/zmk-config/blob/main/config/includes/mods.dtsi
 // REF: https://github.com/urob/zmk-config
+// #binding-cells = <2>; 
 ZMK_BEHAVIOR(hml, hold_tap,
-  #binding-cells = <2>; 
-  bindings = <&kp>, <&kp>; 
   flavor = "balanced"; 
   tapping-term-ms = <280>; 
   quick-tap-ms = <175>; 
   require-prior-idle-ms = <150>; 
   hold-trigger-on-release;
   hold-trigger-key-positions = <RIGHT_HAND THUMBS>;
+  bindings = <&kp>, <&kp>; 
 )
 
+// #binding-cells = <2>; 
 ZMK_BEHAVIOR(hmr, hold_tap,
-  #binding-cells = <2>; 
-  bindings = <&kp>, <&kp>; 
   flavor = "balanced"; 
   tapping-term-ms = <280>; 
   quick-tap-ms = <175>; 
   require-prior-idle-ms = <150>; 
   hold-trigger-on-release;
   hold-trigger-key-positions = <LEFT_HAND THUMBS>;
+  bindings = <&kp>, <&kp>; 
 )
 
+// #binding-cells = <2>;
 ZMK_BEHAVIOR(blp, hold_tap,
-  #binding-cells = <2>;
-  bindings = <&bootloader>, <&none>;
   tapping-term-ms = <3000>;
+  bindings = <&bootloader>, <&none>;
 )
+
+// UNICODE characters
+ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
 
 // LAYERS
 ZMK_LAYER(default_layer,
@@ -80,9 +83,9 @@ ZMK_LAYER(default_layer,
 )
 
 ZMK_LAYER(sym_layer,
-&trans &kp QUESTION    &kp LESS_THAN    &kp AT             &kp GREATER_THAN    &kp GRAVE       &kp AMPERSAND    &kp LEFT_BRACKET  &kp PIPE        &kp RIGHT_BRACKET &kp HASH        &trans
-&trans &hml LGUI SQT   &hml LALT CARET  &hml LCTRL PERCENT &hml LSHFT DOLLAR   &kp PLUS        &kp MINUS        &hmr LSHFT LPAR   &hmr LCTRL COLON &hmr LALT RPAR   &hmr LGUI COMMA &trans
-&trans &kp EXCLAMATION &kp SLASH        &kp ASTERISK       &kp BACKSLASH       &kp TILDE       &kp EQUAL        &kp LBRC          &kp SEMICOLON   &kp RBRC          &kp DOT         &trans
+&trans &kp QUESTION    &kp LESS_THAN    &kp AT             &kp GREATER_THAN    &kp GRAVE       &kp AMPERSAND    &kp LEFT_BRACKET  &kp PIPE        &kp RIGHT_BRACKET &kp HASH         &trans
+&trans &hml LGUI SQT   &hml LALT CARET  &hml LCTRL PERCENT &hml LSHFT DOLLAR   &kp PLUS        &kp MINUS        &hmr LSHFT LPAR   &hmr LCTRL COLON &hmr LALT RPAR   &hmr LGUI DOLLAR &trans
+&trans &kp EXCLAMATION &kp SLASH        &kp ASTERISK       &kp BACKSLASH       &kp TILDE       &kp EQUAL        &kp LBRC          &kp SEMICOLON   &kp RBRC          &euro_sign       &trans
                                         &trans             &trans              &trans          &trans           &trans            &trans
 )
 
