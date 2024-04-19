@@ -11,7 +11,7 @@
 
 // these will be copied on the build process
 #include "./helpers/keypos_42keys.h"
-#include "./helpers/zml_nodefree.h"
+#include "./helpers/zmk_nodefree.h"
 #include "./helpers/tapdance.h"
 
 #define SYM_L 1
