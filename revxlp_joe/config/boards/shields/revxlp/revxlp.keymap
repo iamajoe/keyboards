@@ -17,7 +17,7 @@
 #define RIGHT_COLS = 6 7 8 9 10 11
 
 // TODO: setup the hyper
-// #define HYPER(keycode) LG(LS(LC(LA(keycode))))
+// #define HYPER LGUI(LSHFT(LCTRL(LALT(keycode))))
 
 #define HOME_ROW_MOD() \
     compatible = "zmk,behavior-hold-tap"; \
@@ -52,11 +52,11 @@
         // REF: https://github.com/folke/zmk-config/blob/main/config/includes/mods.dtsi
         // REF: https://github.com/urob/zmk-config
         hml: hml {
-          HOME_ROW_MOD();
+          HOME_ROW_MOD()
           hold-trigger-key-positions = <RIGHT_COLS>;
         };
         hmr: hmr {
-          HOME_ROW_MOD();
+          HOME_ROW_MOD()
           hold-trigger-key-positions = <LEFT_COLS>;
         };
 
@@ -93,22 +93,20 @@
         qwerty_layer {
             label = "Qwerty";
             bindings = <
-&none  &q_esc          &kp W               &e_find             &kp R              &kp T            &y_redo         &kp U             &kp I           &kp O             &kp P            &none
-&none  &hml LGUI A     &hml LALT S         &hml LCTL D         &hml LSFT F        &kp G            &kp H           &hmr LSFT J       &hmr LCTL K     &hmr LALT         &hmr LGUI SEMI   &none
-// &none  &hml LGUI A     &hml LALT S         &hml LCTL D         &hml LSFT F        &hml HYPER G     &hmr HYPER H    &hmr LSFT J       &hmr LCTL K     &hmr LALT         &hmr LGUI SEMI  &none
-&none  &z_undo         &x_cut              &c_copy             &v_paste           &kp B            &kp N           &kp M             &kp COMMA       &kp DOT           &kp SLASH        &none
-                                           &lt SYM_L ESC       &lt NUM_L TAB      &lt SYM_L SPACE  &lt NUM_L BSPC  &lt SYM_L RET     &lt NUM_L DEL
+&none  &q_esc          &kp W            &e_find             &kp R              &kp T            &y_redo         &kp U             &kp I           &kp O             &kp P            &none
+&none  &hml LGUI A     &hml LALT S      &hml LCTRL D        &hml LSHFT F       &kp G            &kp H           &hmr LSHFT J      &hmr LCTRL K    &hmr LALT         &hmr LGUI SEMI   &none
+&none  &z_undo         &x_cut           &c_copy             &v_paste           &kp B            &kp N           &kp M             &kp COMMA       &kp DOT           &kp SLASH        &none
+                                        &lt SYM_L ESC       &lt NUM_L TAB      &lt SYM_L SPACE  &lt NUM_L BSPC  &lt SYM_L RET     &lt NUM_L DEL
             >;
         };
 
         sym_layer {
             label = "Symbol";
             bindings = <
-&trans &kp QUESTION    &kp LESS_THAN       &kp AT             &kp GREATER_THAN    &kp GRAVE       &kp AMPERSAND    &kp LEFT_BRACKET  &kp PIPE        &kp RIGHT_BRACKET &kp HASH        &trans
-&trans &hml LGUI SQT   &hml LALT CARET     &hml LCTL PERCENT  &hml LSFT DOLLAR    &kp PLUS        &kp MINUS        &hmr LSFT LPAR    &hmr LCTL COLON &hmr LALT RPAR    &hmr LGUI COMMA &trans
-// &trans &hml LGUI SQT   &hml LALT CARET     &hml LCTL PERCENT  &hml LSFT DOLLAR    &hml HYPER PLUS &hmr HYPER MINUS &hmr LSFT LPAR    &hmr LCTL COLON &hmr LALT PAR    &hmr LGUI COMMA &trans
-&trans &kp EXCLAMATION &kp SLASH           &kp ASTERISK       &kp BACKSLASH       &kp TILDE       &kp EQUAL        &kp LBRC          &kp SEMICOLON   &kp RBRC          &kp DOT         &trans
-                                           &trans             &trans              &trans          &trans           &trans            &trans
+&trans &kp QUESTION    &kp LESS_THAN    &kp AT             &kp GREATER_THAN    &kp GRAVE       &kp AMPERSAND    &kp LEFT_BRACKET  &kp PIPE        &kp RIGHT_BRACKET &kp HASH        &trans
+&trans &hml LGUI SQT   &hml LALT CARET  &hml LCTRL PERCENT &hml LSHFT DOLLAR   &kp PLUS        &kp MINUS        &hmr LSHFT LPAR   &hmr LCTRL COLON &hmr LALT RPAR   &hmr LGUI COMMA &trans
+&trans &kp EXCLAMATION &kp SLASH        &kp ASTERISK       &kp BACKSLASH       &kp TILDE       &kp EQUAL        &kp LBRC          &kp SEMICOLON   &kp RBRC          &kp DOT         &trans
+                                        &trans             &trans              &trans          &trans           &trans            &trans
             >;
         };
 
@@ -116,8 +114,7 @@
             label = "Number";
             bindings = <
 &trans &kp PLUS        &kp N7             &kp N8             &kp N9              &trans           &trans           &trans            &kp COMMA        &kp DOT          &kp ASTERISK     &trans
-&trans &hmr LGUI MINUS &hmr LALT N4       &hmr LCTL N5       &hmr LSFT N6        &trans           &kp LARW         &hmr LSFT DARW    &hmr LCTL UARW   &hmr LALT RARW   &kp SLASH        &trans
-// &trans &hmr LGUI MINUS &hmr LALT N4       &hmr LCTL N5       &hmr LSFT N6        &trans          &hmr HYPER LARW  &hmr LSFT DARW    &hmr LCTL UARW   &hmr LALT RARW   &kp SLASH      &trans
+&trans &hmr LGUI MINUS &hmr LALT N4       &hmr LCTRL N5      &hmr LSHFT N6       &trans           &kp LARW         &hmr LSHFT DARW   &hmr LCTRL UARW  &hmr LALT RARW   &kp SLASH        &trans
 &trans &kp EQUAL       &kp N1             &kp N2             &kp N3              &kp N0           &kp HOME         &kp PG_DN         &kp PG_UP        &kp END          &kp EQUAL        &trans
                                           &trans             &trans              &trans           &lt SYM_L DEL    &trans            &trans
             >;
@@ -127,8 +124,7 @@
             label = "Media";
             bindings = <
 &trans &blp 0 0       &kp F7              &kp F8              &kp F9             &kp F10           &trans         &trans            &trans           &trans           &trans            &trans
-&trans &trans         &hml LALT F4        &hml LCTL F5        &hml LSFT F6       &kp F11           &kp C_PREV     &hmr LSFT C_VOL_DN &hmr LCTL C_VOL_UP &hmr LALT C_NEXT &trans         &trans
-// &trans &trans         &hml LALT F4        &hml LCTL F5        &hml LSFT F6       &hml HYPER F11    &hmr HYPER C_PREV &hmr LSFT C_VOL_DN &hmr LCTL C_VOL_UP &hmr LALT C_NEXT &trans    &trans
+&trans &trans         &hml LALT F4        &hml LCTRL F5       &hml LSHFT F6      &kp F11           &kp C_PREV     &hmr LSHFT C_VOL_DN &hmr LCTRL C_VOL_UP &hmr LALT C_NEXT &trans       &trans
 &trans &trans         &kp F1              &kp F2              &kp F3             &kp F12           &kp PSCRN      &kp C_PLAY_PAUSE  &kp C_MUTE       &trans           &trans            &trans
                                           &trans              &trans             &trans            &trans         &trans            &trans
             >;
