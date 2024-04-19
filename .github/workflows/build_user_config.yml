@@ -65,16 +65,20 @@ jobs:
 
       - name: Setup the folders and files as expected
         run: |
+          # Copy the required folders
           mkdir -p config/boards/shields
           cp -rf shields/${{ inputs.shield }} config/boards/shields/${{ inputs.shield }}
           cp -rf boards config/boards/shields/${{ inputs.shield }}/boards
           cp -rf west.yml config/west.yml
+          # Do we have all in place?
           echo "Config folder:"
           ls config
           echo "Shield folder:"
           ls config/boards/shields/${{ inputs.shield }}
           echo "Boards available:"
           ls config/boards/shields/${{ inputs.shield }}/boards
+          # Remove so that it doesn't collide when grepping with **
+          rm -rf boards shields west.yml
 
       ##############################################
       # NOTE: Copied from:
@@ -176,6 +180,8 @@ jobs:
         shell: sh -x {0}
         run: |
           mkdir "${{ env.build_dir }}/artifacts"
+          # TODO: to be removed, need ot see what artifacts are in there
+          ls ${{ env.build_dir }}/zephyr
           if [ -f "${{ env.build_dir }}/zephyr/zmk.uf2" ]
           then
             cp "${{ env.build_dir }}/zephyr/zmk.uf2" "${{ env.build_dir }}/artifacts/${{ env.artifact_name }}.uf2"
