@@ -23,12 +23,12 @@
 
 / {
     tap_dances {
-      // tp_q_esc: tp_q_esc {
-      //   compatible = "zmk,behavior-tap-dance";
-      //   #binding-cells = <0>;
-      //   tapping-term-ms = <200>;
-      //   bindings = <&kp Q>, <&kp ESC>; 
-      // };
+      td_q_esc: td_q_esc {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp Q>, <&kp ESC>; 
+      };
     };
 
     behaviors {
@@ -92,10 +92,10 @@
         qwerty_layer {
             label = "Qwerty";
             bindings = <
-&none      &kp Q            &kp W               &kp E               &kp R             &kp T         &kp Y            &kp U          &kp I          &kp O          &kp P          &none
-&none      &hml LGUI A      &hml LALT S         &hml LCTRL D        &hml LSHFT F      &kp G         &kp H            &hmr LSHFT J   &hmr LCTRL K   &hmr LALT L    &hmr LGUI SEMI &none
-&none      &kp Z            &kp X               &kp C               &kp V             &kp B         &kp N            &kp M          &kp COMMA      &kp DOT        &kp SLASH      &none
-                                                &lt SYM_L ESC       &lt NUM_L TAB     &lt SYM_L SPACE &lt NUM_L BSPC &lt SYM_L RET  &lt NUM_L DEL
+&none  &td_q_esc       &kp W            &kp E               &kp R             &kp T           &kp Y            &kp U              &kp I           &kp O              &kp P          &none
+&none  &hml LGUI A     &hml LALT S      &hml LCTRL D        &hml LSHFT F      &hml HYPER G    &hml HYPER H     &hmr LSHFT J       &hmr LCTRL K    &hmr LALT L        &hmr LGUI SEMI &none
+&none  &kp Z           &kp X            &kp C               &kp V             &kp B           &kp N            &kp M              &kp COMMA       &kp DOT            &kp SLASH      &none
+                                        &lt SYM_L ESC       &lt NUM_L TAB     &lt SYM_L SPACE &lt NUM_L BSPC   &lt SYM_L RET      &lt NUM_L DEL
             >;
         };
 
@@ -113,7 +113,7 @@
             label = "Number";
             bindings = <
 &trans &kp PLUS        &kp N7           &kp N8             &kp N9              &trans          &trans           &trans            &kp COMMA        &kp DOT          &kp ASTERISK     &trans
-&trans &hmr LGUI MINUS &hmr LALT N4     &hmr LCTRL N5      &hmr LSHFT N6       &trans          &kp LARW         &hmr LSHFT DARW   &hmr LCTRL UARW  &hmr LALT RARW   &kp SLASH        &trans
+&trans &hml LGUI MINUS &hml LALT N4     &hmr lCTRL N5      &hml LSHFT N6       &trans          &kp LARW         &hmr LSHFT DARW   &hmr LCTRL UARW  &hmr LALT RARW   &kp SLASH        &trans
 &trans &kp EQUAL       &kp N1           &kp N2             &kp N3              &kp N0          &kp HOME         &kp PG_DN         &kp PG_UP        &kp END          &kp EQUAL        &trans
                                         &trans             &trans              &trans          &lt SYM_L DEL    &trans            &trans
             >;
