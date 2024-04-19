@@ -35,11 +35,11 @@ jobs:
             echo "Shield folder does not exist"
             exit 1
           then
-          elif [ ! -f boards }} ]
+          elif [ ! -f boards ]
             echo "Boards folder does not exist"
             exit 1
           then
-          elif [ ! -f west.yml }} ]
+          elif [ ! -f west.yml ]
             echo "west.yml file does not exist"
             exit 1
           fi
