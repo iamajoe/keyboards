@@ -12,6 +12,7 @@ jobs:
     uses: iamajoe/keyboards/.github/workflows/build_user_config.yml@main
     with:
        build_matrix_path: "config/boards/shields/revxlp/build.yaml"
+       config_path: "."
        archive_name: "revxlp_original_firmware"
        # work_dir: "./revxlp_original"
   # TODO: fix release, not being able to download the firmware artifact
