@@ -35,16 +35,13 @@ jobs:
             echo "Shield folder does not exist"
             exit 1
           then
-          fi
-          if [ ! -f boards }} ]
+          elif [ ! -f boards }} ]
             echo "Boards folder does not exist"
             exit 1
           then
-          fi
-          if [ ! -f west.yml }} ]
+          elif [ ! -f west.yml }} ]
             echo "west.yml file does not exist"
             exit 1
-          then
           fi
 
       - name: Install yaml2json

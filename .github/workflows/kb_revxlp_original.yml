@@ -2,16 +2,17 @@ name: "Build revxlp (original)"
 on: 
   push:
     paths:
+      - '.github/workflows/build_user_config.yml'
       - '.github/workflows/kb_revxlp_original.yml'
       - 'boards/shields/revxlp/**'
   pull_request:
     paths:
+      - '.github/workflows/build_user_config.yml'
       - '.github/workflows/kb_revxlp_original.yml'
       - 'boards/shields/revxlp/**'
 
 jobs:
   build:
-    uses: iamajoe/keyboards/.github/workflows/build_user_config.yml@main
     uses: iamajoe/keyboards/.github/workflows/build_user_config.yml@main
     with:
        shield: "revxlp"
