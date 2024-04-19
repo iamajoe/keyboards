@@ -4,12 +4,12 @@ on:
     paths:
       - '.github/workflows/build_user_config.yml'
       - '.github/workflows/kb_revxlp_joe.yml'
-      - 'boards/revxlp_joe/**'
+      - 'shields/revxlp_joe/**'
   pull_request:
     paths:
       - '.github/workflows/build_user_config.yml'
       - '.github/workflows/kb_revxlp_joe.yml'
-      - 'boards/revxlp_joe/**'
+      - 'shields/revxlp_joe/**'
 
 jobs:
   build:
