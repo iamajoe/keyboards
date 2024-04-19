@@ -10,7 +10,7 @@ on:
         type: string
       config_path:
         description: "Path to the config directory"
-        default: "config"
+        default: "."
         required: false
         type: string
       fallback_binary:

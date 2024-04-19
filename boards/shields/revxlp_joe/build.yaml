@@ -1,0 +1,2 @@
+board: [seeeduino_xiao, seeeduino_xiao_ble, seeeduino_xiao_rp2040]
+shield: [revxlp, revxlp_joe]
