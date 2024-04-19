@@ -3,17 +3,17 @@ on:
   push:
     paths:
       - '.github/workflows/kb_revxlp_joe.yml'
-      - 'boards/shields/revxlp_joe/**'
+      - 'boards/revxlp_joe/**'
   pull_request:
     paths:
       - '.github/workflows/kb_revxlp_joe.yml'
-      - 'boards/shields/revxlp_joe/**'
+      - 'boards/revxlp_joe/**'
 
 jobs:
   build_revxlp_joe:
     uses: iamajoe/keyboards/.github/workflows/build_user_config.yml@main
     with:
-       build_matrix_path: "boards/shields/revxlp_joe/build.yaml"
+       build_matrix_path: "boards/revxlp_joe/build.yaml"
        config_path: "."
        archive_name: "revxlp_joe_firmware"
        # work_dir: "./revxlp_joe"

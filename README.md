@@ -1,15 +1,19 @@
-# Revxlp
+# Keyboards
 
-## Original reference
-- https://gitlab.com/lpgalaxy/revxlp
-
-## Enter bootloader mode
+## MCUs
 
 ### Seeeduino BLE
+#### Enter bootloader mode
 Click reset button twice. Hard drive should appear and ready to push the uf2 there.
 
-## Keymap
+## Boards
+
+### Revxlp
+- https://gitlab.com/lpgalaxy/revxlp
+
+### Revxlp (Joe)
+
+#### Keymap
 
 Paste the keymap file into https://keymap-drawer.streamlit.app/
-
-![Keymap](revxlp_joe_keymap.png)
+![Keymap](boards/revxlp_joe/revxlp_joe_keymap.png)
