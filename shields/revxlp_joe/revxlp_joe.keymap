@@ -10,15 +10,10 @@
 #include <dt-bindings/zmk/backlight.h>
 
 #include "./helpers/keypos_42keys.h"
-#include "./helpers/zmk_nodefree.h"
 
 #define SYM_L 1
 #define NUM_L 2
 #define MED_L 3
-
-#define LEFT_HAND = ZMK_HELPER_STRINGIFY(LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5)
-#define RIGHT_HAND = ZMK_HELPER_STRINGIFY(RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5)
-#define THUMBS = ZMK_HELPER_STRINGIFY(LH0 LH1 LH2 RH0 RH1 RH2 )
 
 #define HYPER LC(LS(LA(LGUI)))     // hyper key
 #define TAB_RT      LC(TAB)        // alt window tab right
