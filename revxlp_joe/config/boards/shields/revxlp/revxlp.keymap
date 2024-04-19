@@ -19,18 +19,15 @@
 // TODO: setup the hyper
 // #define HYPER(keycode) LG(LS(LC(LA(keycode))))
 
-#define HOME_ROW_MOD(id, cols) \
-    id: id { \
-        compatible = "zmk,behavior-hold-tap"; \
-        #binding-cells = <2>; \
-        bindings = <&kp>, <&kp>; \
-        flavor = "balanced"; \
-        tapping-term-ms = <280>; \
-        quick-tap-ms = <175>; \
-        require-prior-idle-ms = <150>; \
-        hold-trigger-key-positions = <cols>; \
-        hold-trigger-on-release; \
-    }
+#define HOME_ROW_MOD() \
+    compatible = "zmk,behavior-hold-tap"; \
+    #binding-cells = <2>; \
+    bindings = <&kp>, <&kp>; \
+    flavor = "balanced"; \
+    tapping-term-ms = <280>; \
+    quick-tap-ms = <175>; \
+    require-prior-idle-ms = <150>; \
+    hold-trigger-on-release;
 
 #define CREATE_TAP_DANCE(id, tap, doubletap) \
     id: id { \
@@ -54,8 +51,14 @@
     behaviors {
         // REF: https://github.com/folke/zmk-config/blob/main/config/includes/mods.dtsi
         // REF: https://github.com/urob/zmk-config
-        HOME_ROW_MOD(hml, RIGHT_COLS);
-        HOME_ROW_MOD(hmr, LEFT_COLS);
+        hml: hml {
+          HOME_ROW_MOD();
+          hold-trigger-key-positions = <RIGHT_COLS>;
+        };
+        hmr: hmr {
+          HOME_ROW_MOD();
+          hold-trigger-key-positions = <LEFT_COLS>;
+        };
 
         blp: bootloader_long_press {
             compatible = "zmk,behavior-hold-tap";
