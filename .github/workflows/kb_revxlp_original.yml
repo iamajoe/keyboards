@@ -13,7 +13,7 @@ on:
 
 jobs:
   build:
-    uses: iamajoe/keyboards/.github/workflows/build_user_config.yml@diff_structure
+    uses: iamajoe/keyboards/.github/workflows/build_user_config.yml@main
     with:
        shield: "revxlp"
   # TODO: fix release, not being able to download the firmware artifact
