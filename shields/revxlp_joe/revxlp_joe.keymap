@@ -43,7 +43,7 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            // hold-trigger-key-positions = <RIGHT_HAND THUMBS>;
+            hold-trigger-key-positions = <RIGHT_HAND THUMBS>;
             hold-trigger-on-release;
             // global-quick-tap-ms = <150>;         // requires PR #1387
             // global-quick-tap;
@@ -56,7 +56,7 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            // hold-trigger-key-positions = <LEFT_HAND THUMBS>;
+            hold-trigger-key-positions = <LEFT_HAND THUMBS>;
             hold-trigger-on-release;
             // global-quick-tap-ms = <150>;         // requires PR #1387
             // global-quick-tap;
@@ -95,10 +95,10 @@
         qwerty_layer {
             label = "Qwerty";
             bindings = <
-&none  &td_q_esc       &kp W            &kp E               &kp R             &kp T           &kp Y            &kp U              &kp I           &kp O              &kp P           &none
-&none  &hml LGUI A     &hml LALT S      &hml LCTRL D        &hml LSHFT F      &kp G           &kp H            &hmr LSHFT J       &hmr LCTRL K    &hmr LALT L        &hmr LGUI SEMI  &none
-&none  &kp Z           &kp X            &kp C               &kp V             &kp B           &kp N            &kp M              &kp COMMA       &kp DOT            &kp SLASH       &none
-                                        &lt SYM_L ESC       &lt NUM_L TAB     &lt SYM_L SPACE &lt NUM_L BSPC   &lt SYM_L RET      &lt NUM_L DEL
+&none  &td_q_esc       &kp W            &kp E               &kp R              &kp T           &kp Y            &kp U              &kp I           &kp O              &kp P          &none
+&none  &hml LGUI A     &hml LALT S      &hml LCTRL D        &hml LSHFT F       &kp G           &kp H            &hmr LSHFT J       &hmr LCTRL K    &hmr LALT L        &hmr LGUI SEMI &none
+&none  &kp Z           &kp X            &kp C               &kp V              &kp B           &kp N            &kp M              &kp COMMA       &kp DOT            &kp SLASH      &none
+                                        &lt SYM_L ESC       &lt NUM_L TAB      &lt SYM_L SPACE &lt NUM_L BSPC   &lt SYM_L RET      &lt NUM_L DEL
             >;
         };
 
