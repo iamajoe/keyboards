@@ -23,7 +23,12 @@
 
 / {
     tap_dances {
-      // ...
+      // tp_q_esc: tp_q_esc {
+      //   compatible = "zmk,behavior-tap-dance";
+      //   #binding-cells = <0>;
+      //   tapping-term-ms = <200>;
+      //   bindings = <&kp Q>, <&kp ESC>; 
+      // };
     };
 
     behaviors {
@@ -87,12 +92,10 @@
         qwerty_layer {
             label = "Qwerty";
             bindings = <
-  // &none  &q_esc          &kp W            &e_find            &kp R               &kp T            &y_redo         &kp U             &kp I           &kp O             &kp P            &none
-&none  &kp Q          &kp W            &kp E            &kp R               &kp T            &kp Y         &kp U             &kp I           &kp O             &kp P            &none
-&none  &hml LGUI A     &hml LALT S      &hml LCTRL D       &hml LSHFT F        &kp G            &kp H           &hmr LSHFT J      &hmr LCTRL K    &hmr LALT         &hmr LGUI SEMI   &none
-// &none  &z_undo         &x_cut           &c_copy            &v_paste            &kp B            &kp N           &kp M             &kp COMMA       &kp DOT           &kp SLASH        &none
-&none  &kp Z         &kp X           &kp C            &kp V            &kp B            &kp N           &kp M             &kp COMMA       &kp DOT           &kp SLASH        &none
-                                        &lt SYM_L ESC      &lt NUM_L TAB       &lt SYM_L SPACE  &lt NUM_L BSPC  &lt SYM_L RET     &lt NUM_L DEL
+&none      &kp Q            &kp W               &kp E               &kp R             &kp T         &kp Y            &kp U          &kp I          &kp O          &kp P          &none
+&none      &hml LSFT A      &hml LGUI S         &hml LALT D         &hml LCTL F       &kp G         &kp H            &hmr RCTL J    &hmr RALT K    &hmr LGUI L    &hmr LSFT SEMI &none
+&none      &kp Z            &kp X               &kp C               &kp V             &kp B         &kp N            &kp M          &kp COMMA      &kp DOT        &kp SLASH      &none
+                                                &kp ESC             &lt NUM_L DEL     &kp SPACE     &kp BSPC         &lt SYM_L RET  &kp TAB
             >;
         };
 
