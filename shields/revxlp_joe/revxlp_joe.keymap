@@ -42,7 +42,7 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            hold-trigger-key-positions = <RIGHT_HAND THUMBS>;
+            // hold-trigger-key-positions = <RIGHT_HAND THUMBS>;
             hold-trigger-on-release;
             // global-quick-tap-ms = <150>;         // requires PR #1387
             // global-quick-tap;
@@ -55,7 +55,7 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            hold-trigger-key-positions = <LEFT_HAND THUMBS>;
+            // hold-trigger-key-positions = <LEFT_HAND THUMBS>;
             hold-trigger-on-release;
             // global-quick-tap-ms = <150>;         // requires PR #1387
             // global-quick-tap;
