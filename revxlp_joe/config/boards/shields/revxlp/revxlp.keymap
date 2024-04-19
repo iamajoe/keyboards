@@ -26,7 +26,7 @@
 
 / {
     tap_dances {
-      CREATE_TAP_DANCE(Q, ESC)
+      CREATE_TAP_DANCE(Q, ESC);
     };
 
     behaviors {
