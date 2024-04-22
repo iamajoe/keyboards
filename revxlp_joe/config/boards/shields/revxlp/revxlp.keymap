@@ -98,7 +98,7 @@
 &none      &dtd Q ESC      &kp W               &dtd E K_FIND       &kp R              &kp T            &dtd Y K_REDO   &kp U             &kp I           &kp O             &kp P            &none
 &none      &hml LGUI A     &hml LALT S         &hml LCTL D         &hml LSFT F        &hml HYPER G     &hmr HYPER H    &hmr LSFT J       &hmr LCTL K     &hmr LALT         &hmr LGUI SEMI   &none
 &none      &dtd Z K_UNDO   &dtd X K_CUT        &dtd C K_COPY       &dtd V K_PASTE     &kp B            &kp N           &kp M             &kp COMMA       &kp DOT           &kp SLASH        &none
-                                               &lt SYM_L ESC       &lt NUM_L TAB      &lt SYM_L SPACE  &lt NUM_L BSPC  &lt SYM_L RET     &lt NUM_L DEL
+                                               &lt SYM_L ESC       &lt NUM_L TAB      &kp SPACE        &kp BSPC        &kp SYM_L RET     &lt NUM_L DEL
             >;
         };
 
