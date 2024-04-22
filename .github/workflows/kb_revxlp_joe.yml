@@ -2,17 +2,20 @@ name: "Build revxlp (joe)"
 on: 
   push:
     paths:
-      - 'revxlp_joe/**'
+      - '.github/workflows/build_user_config.yml'
+      - '.github/workflows/kb_revxlp_joe.yml'
+      - 'shields/revxlp_joe/**'
   pull_request:
     paths:
-      - 'revxlp_joe/**'
+      - '.github/workflows/build_user_config.yml'
+      - '.github/workflows/kb_revxlp_joe.yml'
+      - 'shields/revxlp_joe/**'
 
 jobs:
-  build_revxlp_joe:
+  build:
     uses: iamajoe/keyboards/.github/workflows/build_user_config.yml@main
     with:
-       archive_name: "revxlp_joe_firmware"
-       work_dir: "./revxlp_joe"
+       shield: "revxlp_joe"
   # TODO: fix release, not being able to download the firmware artifact
   # release_revxlp_joe:
   #   if: github.event.pull_request.merged == true && github.base_ref == 'main'
