@@ -125,10 +125,10 @@
         qwerty_layer {
             label = "Qwerty";
             bindings = <
-&none  &td_q_esc       &kp W            &kp E               &kp R              &kp T           &kp Y            &kp U              &kp I           &kp O              &kp P          &none
-&none  &hml LGUI A     &hml LALT S      &hml LCTRL D        &hml LSHFT F       &hml HYPER G    &hmr HYPER H     &hmr LSHFT J       &hmr LCTRL K    &hmr LALT L        &hmr LGUI SEMI &none
-&none  &kp Z           &kp X            &kp C               &kp V              &kp B           &kp N            &kp M              &kp COMMA       &kp DOT            &kp SLASH      &none
-                                        &lt SYM_L ESC       &lt NUM_L TAB      &kp SPACE       &kp BSPC         &lt SYM_L RET      &lt NUM_L DEL
+&hml ESC TAB  &td_q_esc       &kp W            &kp E               &kp R              &kp T           &kp Y            &kp U              &kp I           &kp O              &kp P          &kp BKSPC
+&kp LCTRL     &hml LGUI A     &hml LALT S      &hml LCTRL D        &hml LSHFT F       &hml HYPER G    &hmr HYPER H     &hmr LSHFT J       &hmr LCTRL K    &hmr LALT L        &hmr LGUI SEMI &hmr LGUI RET
+&kp LSHFT     &kp Z           &kp X            &kp C               &kp V              &kp B           &kp N            &kp M              &kp COMMA       &kp DOT            &kp SLASH      &kp LALT
+                                               &lt SYM_L ESC       &lt NUM_L TAB      &kp SPACE       &kp BSPC         &lt SYM_L RET      &lt NUM_L DEL
             >;
         };
 
