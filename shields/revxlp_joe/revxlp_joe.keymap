@@ -125,8 +125,8 @@
         qwerty_layer {
             label = "Qwerty";
             bindings = <
-&TAB           &td_q_esc       &kp W            &kp E               &kp R              &kp T           &kp Y            &kp U              &kp I           &kp O              &kp P          &BSPC
-&LCTRL         &hml LGUI A     &hml LALT S      &hml LCTRL D        &hml LSHFT F       &hml HYPER G    &hmr HYPER H     &hmr LSHFT J       &hmr LCTRL K    &hmr LALT L        &hmr LGUI SEMI &RET
+&hml TAB ESC   &td_q_esc       &kp W            &kp E               &kp R              &kp T           &kp Y            &kp U              &kp I           &kp O              &kp P          &BSPC
+&LCTRL         &hml LGUI A     &hml LALT S      &hml LCTRL D        &hml LSHFT F       &hml HYPER G    &hmr HYPER H     &hmr LSHFT J       &hmr LCTRL K    &hmr LALT L        &hmr LGUI SEMI &hmr LGUI RET
 &LSHFT         &kp Z           &kp X            &kp C               &kp V              &kp B           &kp N            &kp M              &kp COMMA       &kp DOT            &kp SLASH      &LALT
                                                 &lt SYM_L ESC       &lt NUM_L TAB      &kp SPACE       &kp BSPC         &lt SYM_L RET      &lt NUM_L DEL
             >;
