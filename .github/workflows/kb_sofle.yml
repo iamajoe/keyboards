@@ -1,0 +1,25 @@
+name: "Build sofle (joe)"
+on: 
+  push:
+    paths:
+      - '.github/workflows/build_user_config.yml'
+      - '.github/workflows/kb_sofle.yml'
+      - 'shields/sofle/**'
+  pull_request:
+    paths:
+      - '.github/workflows/build_user_config.yml'
+      - '.github/workflows/kb_sofle.yml'
+      - 'shields/sofle/**'
+
+jobs:
+  build:
+    uses: iamajoe/keyboards/.github/workflows/build_user_config.yml@main
+    with:
+       shield: "sofle"
+  # TODO: fix release, not being able to download the firmware artifact
+  # release_revxlp_joe:
+  #   if: github.event.pull_request.merged == true && github.base_ref == 'main'
+  #   needs: build_revxlp_joe
+  #   uses: iamajoe/keyboards/.github/workflows/release_user_config.yml@main
+  #   with:
+  #     archive_name: "revxlp_joe_firmware"

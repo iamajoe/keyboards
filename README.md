@@ -6,6 +6,10 @@
 #### Enter bootloader mode
 Click reset button twice. Hard drive should appear and ready to push the uf2 there.
 
+### nice!nano
+#### Enter bootloader mode
+Click reset button twice. Hard drive should appear and ready to push the uf2 there.
+
 ## Boards
 
 ### Revxlp
