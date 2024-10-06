@@ -4,18 +4,18 @@ on:
     paths:
       - '.github/workflows/build_user_config.yml'
       - '.github/workflows/kb_sofle.yml'
-      - 'shields/sofle/**'
+      - 'shields/splitkb_aurora_sofle/**'
   pull_request:
     paths:
       - '.github/workflows/build_user_config.yml'
       - '.github/workflows/kb_sofle.yml'
-      - 'shields/sofle/**'
+      - 'shields/splitkb_aurora_sofle/**'
 
 jobs:
   build:
     uses: iamajoe/keyboards/.github/workflows/build_user_config.yml@main
     with:
-       shield: "sofle"
+       shield: "splitkb_aurora_sofle"
   # TODO: fix release, not being able to download the firmware artifact
   # release_revxlp_joe:
   #   if: github.event.pull_request.merged == true && github.base_ref == 'main'
