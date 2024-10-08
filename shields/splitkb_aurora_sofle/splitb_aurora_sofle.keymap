@@ -30,13 +30,13 @@
     behaviors {
     };
 
-    cond_layers {
-        compatible = "zmk,conditional-layers";
-        tri {
-          if-layers = <NUM_L SYM_L>;
-          then-layer = <MED_L>;
-        };
-    };
+    // cond_layers {
+    //     compatible = "zmk,conditional-layers";
+    //     tri {
+    //       if-layers = <NUM_L SYM_L>;
+    //       then-layer = <MED_L>;
+    //     };
+    // };
 
     combos {
         compatible = "zmk,combos";
