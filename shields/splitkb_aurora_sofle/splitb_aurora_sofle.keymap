@@ -30,13 +30,13 @@
     behaviors {
     };
 
-    // cond_layers {
-    //     compatible = "zmk,conditional-layers";
-    //     tri {
-    //       if-layers = <NUM_L SYM_L>;
-    //       then-layer = <MED_L>;
-    //     };
-    // };
+    cond_layers {
+        compatible = "zmk,conditional-layers";
+        tri {
+          if-layers = <NUM_L SYM_L>;
+          then-layer = <MED_L>;
+        };
+    };
 
     combos {
         compatible = "zmk,combos";
@@ -74,7 +74,7 @@
 &kp F1     &kp F2           &kp F3            &kp F4             &kp F5              &kp F6                      &kp F7           &kp F8            &kp F9          &kp F10           &kp F11          &kp F12
 &trans     &kp QUESTION     &kp LESS_THAN     &kp AT             &kp GREATER_THAN    &kp GRAVE                   &kp AMPERSAND    &kp LEFT_BRACKET  &kp PIPE        &kp RIGHT_BRACKET &kp HASH         &trans
 &trans     &kp SQT          &kp CARET         &kp PERCENT        &kp DOLLAR          &kp PLUS                    &kp MINUS        &kp LPAR          &kp COLON       &kp RPAR          &kp DOLLAR       &trans
-&trans     &kp EXCLAMATION  &kp SLASH         &kp ASTERISK       &kp BACKSLASH       &kp TILDE                   &kp EQUAL        &kp LBRC          &kp SEMICOLON   &kp RBRC          &kp INT_EUR      &trans
+&trans     &kp EXCLAMATION  &kp SLASH         &kp ASTERISK       &kp BACKSLASH       &kp TILDE   &trans &trans   &kp EQUAL        &kp LBRC          &kp SEMICOLON   &kp RBRC          &kp INT_EUR      &trans
                             &trans            &trans             &trans              &trans      &trans &trans   &trans           &trans            &trans          &trans
             >;
 
@@ -92,7 +92,7 @@
 &trans &trans          &trans           &trans             &trans       &trans                       &trans      &trans     &trans     &trans     &trans           &trans
 &trans &kp PLUS        &kp N7           &kp N8             &kp N9       &trans                       &trans      &trans     &kp COMMA  &kp DOT    &kp ASTERISK     &trans
 &trans &kp MINUS       &kp N4           &kp N5             &kp N6       &trans                       &kp LARW    &kp DARW   &kp UARW   &kp RARW   &kp SLASH        &trans
-&trans &kp EQUAL       &kp N1           &kp N2             &kp N3       &kp N0                       &kp HOME    &kp PG_DN  &kp PG_UP  &kp END    &kp EQUAL        &trans
+&trans &kp EQUAL       &kp N1           &kp N2             &kp N3       &kp N0    &trans   &trans    &kp HOME    &kp PG_DN  &kp PG_UP  &kp END    &kp EQUAL        &trans
                        &trans           &trans             &trans       &trans    &trans   &trans    &trans      &trans     &trans     &trans
             >;
 
@@ -110,7 +110,7 @@
 &bt BT_CLR &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                 &trans     &trans            &trans       &trans     &trans    &trans
 &trans     &trans         &kp F7        &kp F8        &kp F9        &kp F10                      &trans     &trans            &trans       &trans     &trans    &trans
 &trans     &trans         &kp F4        &kp F5        &kp F6        &kp F11                      &kp C_PREV &kp C_VOL_DN      &kp C_VOL_UP &kp C_NEXT &trans    &trans
-&trans     &trans         &kp F1        &kp F2        &kp F3        &kp F12                      &kp PSCRN  &kp C_PLAY_PAUSE  &kp C_MUTE   &trans     &trans    &trans
+&trans     &trans         &kp F1        &kp F2        &kp F3        &kp F12   &trans   &trans    &kp PSCRN  &kp C_PLAY_PAUSE  &kp C_MUTE   &trans     &trans    &trans
                           &trans        &trans        &trans        &trans    &trans   &trans    &trans     &trans            &trans       &trans
             >;
 
