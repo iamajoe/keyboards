@@ -114,7 +114,6 @@ jobs:
           if [ "${{ env.base_dir }}" != "${GITHUB_WORKSPACE}" ]; then
             mkdir "${{ env.base_dir }}/${{ inputs.config_path }}"
             cp -R ${{ inputs.config_path }}/* "${{ env.base_dir }}/${{ inputs.config_path }}/"
-            ls ${{ env.base_dir }}/${{ inputs.config_path }}/boards/shields/${{inputs.shield}}
           fi
 
       - name: Cache west modules
@@ -151,6 +150,7 @@ jobs:
         working-directory: ${{ env.base_dir }}
         shell: sh -x {0}
         run: | 
+          ls ${{ env.base_dir }}/${{ inputs.config_path }}/boards/shields/${{inputs.shield}}
           west build -s zmk/app -d "${{ env.build_dir }}" -b "${{ matrix.board }}" ${{ env.extra_west_args }} -- -DZMK_CONFIG=${{ env.base_dir }}/${{ inputs.config_path }} ${{ env.extra_cmake_args }} ${{ matrix.cmake-args }}
 
       - name: ${{ env.display_name }} Kconfig file
