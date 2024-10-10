@@ -68,6 +68,7 @@ jobs:
           # Copy the required folders
           mkdir -p config/boards/shields
           cp -rf shields/${{ inputs.shield }} config/boards/shields/${{ inputs.shield }}
+          cp -rf shields/${{ inputs.shield }}/*.keymap config/boards/shields/${{ inputs.shield }}/keymap.keymap
           cp -rf helpers config/boards/shields/${{ inputs.shield }}/helpers
           cp -rf boards config/boards/shields/${{ inputs.shield }}/boards
           cp -rf west.yml config/west.yml
@@ -149,7 +150,8 @@ jobs:
       - name: West Build (${{ env.display_name }})
         working-directory: ${{ env.base_dir }}
         shell: sh -x {0}
-        run: west build -s zmk/app -d "${{ env.build_dir }}" -b "${{ matrix.board }}" ${{ env.extra_west_args }} -- -DZMK_CONFIG=${{ env.base_dir }}/${{ inputs.config_path }} ${{ env.extra_cmake_args }} ${{ matrix.cmake-args }}
+        run: | 
+          west build -s zmk/app -d "${{ env.build_dir }}" -b "${{ matrix.board }}" ${{ env.extra_west_args }} -- -DZMK_CONFIG=${{ env.base_dir }}/${{ inputs.config_path }} ${{ env.extra_cmake_args }} ${{ matrix.cmake-args }}
 
       - name: ${{ env.display_name }} Kconfig file
         run: |
