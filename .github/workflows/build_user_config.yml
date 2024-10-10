@@ -70,9 +70,11 @@ jobs:
           cp -rf shields/${{ inputs.shield }} config/boards/shields/${{ inputs.shield }}
           cp -rf helpers config/boards/shields/${{ inputs.shield }}/helpers
           cp -rf boards config/boards/shields/${{ inputs.shield }}/boards
+          cp -rf shields/${{ inputs.shield }}/*.keymap config/
           cp -rf west.yml config/west.yml
           # Remove so that it doesn't collide when grepping with **
           rm -rf boards shields west.yml
+          ls config
 
       ##############################################
       # NOTE: Copied from:
@@ -150,7 +152,6 @@ jobs:
         working-directory: ${{ env.base_dir }}
         shell: sh -x {0}
         run: | 
-          ls ${{ env.base_dir }}/${{ inputs.config_path }}/boards/shields/${{inputs.shield}}
           west build -s zmk/app -d "${{ env.build_dir }}" -b "${{ matrix.board }}" ${{ env.extra_west_args }} -- -DZMK_CONFIG=${{ env.base_dir }}/${{ inputs.config_path }} ${{ env.extra_cmake_args }} ${{ matrix.cmake-args }}
 
       - name: ${{ env.display_name }} Kconfig file
