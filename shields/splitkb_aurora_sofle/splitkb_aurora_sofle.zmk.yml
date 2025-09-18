@@ -4,12 +4,12 @@ name: splitkb.com Aurora Sofle
 type: shield
 url: https://splitkb.com/products/aurora-sofle-pcb-kit
 requires: [pro_micro]
-exposes: [i2c_oled]
+# exposes: [i2c_oled]
 features:
   - keys
-  - display
-  - encoder
-  - underglow
+  # - display
+  # - encoder
+  # - underglow
 siblings:
   - splitkb_aurora_sofle_left
   - splitkb_aurora_sofle_right
