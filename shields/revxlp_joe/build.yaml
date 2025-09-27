@@ -1,3 +1,0 @@
-# board: [seeeduino_xiao, seeeduino_xiao_ble, seeeduino_xiao_rp2040]
-board: [seeeduino_xiao_ble]
-shield: [revxlp_joe]
